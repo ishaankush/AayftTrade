@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View,Box } from 'react-native';
+import { NativeBaseProvider } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -7,6 +7,7 @@ import {ZHome,ZFavourite,ZProfile} from './src/scenes'
 
 function Home() {
   return (
+    
     <ZHome/>
   );
 }
@@ -27,6 +28,7 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
+    <NativeBaseProvider>
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
@@ -64,6 +66,7 @@ function MyTabs() {
         }}
       />
     </Tab.Navigator>
+    </NativeBaseProvider>
   );
 }
 
